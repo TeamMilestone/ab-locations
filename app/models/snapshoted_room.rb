@@ -1,0 +1,2 @@
+class SnapshotedRoom < ApplicationRecord
+end

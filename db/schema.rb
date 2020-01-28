@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_16_150837) do
+ActiveRecord::Schema.define(version: 2020_01_27_192650) do
+
+  create_table "snapshoted_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "ab_room_id"
+    t.bigint "ab_user_id"
+    t.string "name"
+    t.integer "beds"
+    t.integer "bedrooms"
+    t.integer "bathrooms"
+    t.string "superhost"
+    t.string "localized_city"
+    t.decimal "star_rating", precision: 10
+    t.integer "review_count"
+    t.json "snapshot_data"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "staff_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
